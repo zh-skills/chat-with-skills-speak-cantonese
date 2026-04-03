@@ -22,8 +22,8 @@ A local AI chat app with built-in Cantonese text-to-speech skills. Runs entirely
 ```bash
 git clone https://github.com/zh-skills/chat-with-skills-speak-cantonese
 cd chat-with-skills-speak-cantonese
-pip install -r requirements.txt
-python cantonese01_server.py
+pip3 install -r requirements.txt
+python3 cantonese01_server.py
 ```
 
 The browser opens automatically at `http://localhost:8114/cantonese01_index.html`.
