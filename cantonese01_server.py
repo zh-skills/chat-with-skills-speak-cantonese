@@ -39,7 +39,7 @@ LOCAL_MODELS = {
     'Qwen2.5-0.5B-Instruct-Q4_K_M.gguf': 'https://huggingface.co/bartowski/Qwen2.5-0.5B-Instruct-GGUF/resolve/main/Qwen2.5-0.5B-Instruct-Q4_K_M.gguf',
     'Qwen2.5-1.5B-Instruct-Q4_K_M.gguf': 'https://huggingface.co/bartowski/Qwen2.5-1.5B-Instruct-GGUF/resolve/main/Qwen2.5-1.5B-Instruct-Q4_K_M.gguf',
 }
-MODELS_DIR      = os.path.join(BASE_DIR, "models")
+MODELS_DIR      = os.path.join(os.path.dirname(BASE_DIR), "models")
 _llama_instance = None
 
 
