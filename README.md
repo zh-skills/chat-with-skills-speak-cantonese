@@ -20,8 +20,8 @@ A local AI chat app with built-in Cantonese text-to-speech skills. Runs entirely
 ## Quick Start
 
 ```bash
-git clone https://github.com/zh-skills/cantonese01
-cd cantonese01
+git clone https://github.com/zh-skills/chat-with-skills-speak-cantonese
+cd chat-with-skills-speak-cantonese
 pip install -r requirements.txt
 python cantonese01_server.py
 ```
