@@ -76,6 +76,7 @@ What is artificial intelligence?
 use skill speak-cantonese 各個國家有各個國家嘅國歌
 use skill speak-cantonese-save 一蚊一隻雞，一蚊一隻龜
 use skill speak-cantonese-file cantonese-challenge-1.txt
+use skill speak-cantonese-file speech-Cantonese.txt
 ```
 
 ---
