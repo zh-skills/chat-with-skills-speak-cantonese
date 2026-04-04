@@ -162,6 +162,8 @@ def api_speak_cantonese_save():
 
 @app.route("/api/speak-cantonese-file", methods=["POST"])
 def api_speak_cantonese_file():
+    from flask import Response, stream_with_context
+    import json as _json
     data     = request.get_json()
     message  = (data.get("message") or "").strip()
     filename = re.sub(r'^(?:use\s+skill\s+speak-cantonese-file|用技能朗读粤语文件)\s*', '', message, flags=re.IGNORECASE).strip()
@@ -175,7 +177,6 @@ def api_speak_cantonese_file():
     if not os.path.isfile(filepath):
         return jsonify({"answer": f"❌ File not found: {filepath}"})
 
-    # Read and display lines immediately
     import re as _re
     def clean(l):
         l = _re.sub(r'^#{1,6}\s*', '', l)
@@ -192,17 +193,16 @@ def api_speak_cantonese_file():
     if not lines:
         return jsonify({"answer": f"❌ No speakable content found in: {filepath}"})
 
-    # Build display text shown immediately in chat
     display = '\n'.join(f"[{i+1}/{len(lines)}] {l}" for i, l in enumerate(lines))
-    preview = f"📄 {filename} — {len(lines)} lines:\n\n{display}\n\n🔊 Speaking each line..."
 
-    # Speak in background thread so response returns immediately
-    import threading
-    def speak_bg():
-        speak_cantonese_file(filepath, save_dir=BASE_DIR)
-    threading.Thread(target=speak_bg, daemon=True).start()
+    def generate():
+        nl = '\n'
+        preview_text = f'📄 {filename} — {len(lines)} lines:{nl}{nl}{display}{nl}{nl}🔊 Speaking each line...'
+        yield f"data: {_json.dumps({'type': 'line', 'text': preview_text})}\n\n"
+        result = speak_cantonese_file(filepath, save_dir=BASE_DIR)
+        yield f"data: {_json.dumps({'type': 'done', 'text': result})}\n\n"
 
-    return jsonify({"answer": preview, "skill": "speak-cantonese-file"})
+    return Response(stream_with_context(generate()), mimetype='text/event-stream')
 
 
 # ── Static file server ────────────────────────────────────────────────────────

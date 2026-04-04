@@ -204,6 +204,47 @@ async function sendMessage() {
   const thinking = addMessage(label, 'assistant thinking');
 
   currentAbort = new AbortController();
+
+  if (isSpeakCantoneseFile(text)) {
+    const container = addMessage('', 'assistant');
+    thinking.remove();
+    fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: text }),
+      signal: currentAbort.signal,
+    }).then(res => {
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = '';
+      function read() {
+        reader.read().then(({ done, value }) => {
+          if (done) { setDisabled(false); input.focus(); return; }
+          buffer += decoder.decode(value, { stream: true });
+          const parts = buffer.split('\n\n');
+          buffer = parts.pop();
+          parts.forEach(part => {
+            const dataLine = part.split('\n').find(l => l.startsWith('data:'));
+            if (!dataLine) return;
+            try {
+              const evt = JSON.parse(dataLine.slice(5).trim());
+              if (evt.type === 'line' || evt.type === 'done') {
+                container.textContent = evt.text;
+                messages.scrollTop = messages.scrollHeight;
+              }
+            } catch (_) {}
+          });
+          read();
+        }).catch(() => { setDisabled(false); });
+      }
+      read();
+    }).catch(err => {
+      if (err.name !== 'AbortError') addMessage(`Error: could not reach server at ${API_BASE}`, 'assistant');
+      setDisabled(false);
+    });
+    return;
+  }
+
   try {
     const res  = await fetch(endpoint, {
       method: 'POST',
