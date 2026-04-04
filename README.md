@@ -59,6 +59,9 @@ cd chat-with-skills-speak-cantonese
 uv run server.py
 ```
 
+The browser opens automatically at `http://localhost:8114/cantonese01_index.html`.
+On first chat, the Qwen2.5-0.5B model (~400MB) downloads automatically to `models/`.
+
 **Next time (after restarting your computer):**
 ```bash
 cd chat-with-skills-folder/chat-with-skills-speak-cantonese
@@ -70,6 +73,9 @@ uv run server.py
 ## Quick Start — Windows
 
 **Step 1 — Create a folder (first time only):**
+
+Create a folder to keep all your chat-with-skills apps together. The free local AI model (~400MB) will be downloaded into this folder. As long as you use the same folder, you only download the model once.
+
 ```bash
 mkdir chat-with-skills-folder
 cd chat-with-skills-folder
@@ -93,6 +99,9 @@ git clone https://github.com/zh-skills/chat-with-skills-speak-cantonese
 cd chat-with-skills-speak-cantonese
 uv run server.py
 ```
+
+The browser opens automatically at `http://localhost:8114/cantonese01_index.html`.
+On first chat, the Qwen2.5-0.5B model (~400MB) downloads automatically to `models/`.
 
 **Next time (after restarting your computer):**
 ```bash
