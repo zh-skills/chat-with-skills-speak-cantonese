@@ -1,4 +1,4 @@
-# Cantonese01 — Chat with Cantonese Skills
+# Chat with speak-cantonese skill
 
 A local AI chat app with built-in Cantonese text-to-speech skills. Runs entirely on your computer — no cloud API needed for TTS.
 
