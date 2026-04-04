@@ -51,7 +51,7 @@ const SKILLS_CATALOG = [
     name: 'Speak Cantonese Save',
     from: ['text'],
     to: ['text'],
-    desc: 'Convert a Cantonese sentence to speech and save as mp3. No playback.<br><span style="color:#8e8e93;font-size:12px;">将粤语句子转为语音并保存为 mp3，不播放。</span>',
+    desc: 'Convert a Cantonese sentence to speech and save as mp3.<br><span style="color:#8e8e93;font-size:12px;">将粤语句子转为语音并保存为 mp3。</span>',
     natural: 'use skill speak-cantonese-save 各個國家都有各個國家嘅國歌',
     examples: [
       'use skill speak-cantonese-save 各個國家都有各個國家嘅國歌',
