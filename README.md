@@ -35,6 +35,11 @@ If pip works:
 pip install uv
 ```
 
+If pip3 works (macOS):
+```bash
+pip3 install uv
+```
+
 If pip is blocked (macOS Homebrew):
 ```bash
 pipx install uv
