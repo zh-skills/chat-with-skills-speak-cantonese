@@ -19,7 +19,16 @@ A local AI chat app with built-in Cantonese text-to-speech skills. Runs entirely
 
 ## Quick Start
 
-**Step 1 — Install uv package manager (one-time, choose one):**
+**Step 1 — Create a folder on your computer (first time only):**
+
+Create a folder to keep all your chat-with-skills apps together. The free local AI model (~400MB) will be downloaded into this folder. As long as you use the same folder, you only download the model once.
+
+```bash
+mkdir chat-with-skills-folder
+cd chat-with-skills-folder
+```
+
+**Step 2 — Install uv package manager (one-time, choose one):**
 
 If pip works:
 ```bash
@@ -41,7 +50,7 @@ Windows (no pip needed):
 powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-**Step 2 — Clone and run:**
+**Step 3 — Clone and run:**
 ```bash
 git clone https://github.com/zh-skills/chat-with-skills-speak-cantonese
 cd chat-with-skills-speak-cantonese
@@ -49,6 +58,12 @@ uv run server.py
 ```
 
 `uv run` automatically creates a virtual environment, installs all dependencies, and starts the server.
+
+**Next time (after restarting your computer):**
+```bash
+cd chat-with-skills-speak-cantonese
+uv run server.py
+```
 
 The browser opens automatically at `http://localhost:8114/cantonese01_index.html`.
 
