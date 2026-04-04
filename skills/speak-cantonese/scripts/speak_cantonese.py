@@ -6,7 +6,7 @@ Usage:
     python speak_cantonese.py {sentence}
 
 Examples:
-    python speak_cantonese.py 各個國家有各個國家嘅國歌
+    python speak_cantonese.py 各個國家都有各個國家嘅國歌
     python speak_cantonese.py 一蚊一隻雞，一蚊一隻龜
 """
 

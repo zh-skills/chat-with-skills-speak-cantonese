@@ -140,7 +140,7 @@ def api_speak_cantonese():
     message  = (data.get("message") or "").strip()
     sentence = re.sub(r'^(?:use\s+skill\s+speak-cantonese|用技能講廣東話|用技能说粤语)\s*', '', message, flags=re.IGNORECASE).strip()
     if not sentence:
-        return jsonify({"answer": "Please include a sentence.\nExample: use skill speak-cantonese 各個國家有各個國家嘅國歌"})
+        return jsonify({"answer": "Please include a sentence.\nExample: use skill speak-cantonese 各個國家都有各個國家嘅國歌"})
     answer = speak_cantonese(sentence)
     return jsonify({"answer": answer, "skill": "speak-cantonese"})
 
@@ -153,7 +153,7 @@ def api_speak_cantonese_save():
     message  = (data.get("message") or "").strip()
     sentence = re.sub(r'^(?:use\s+skill\s+speak-cantonese-save|用技能保存粤语)\s*', '', message, flags=re.IGNORECASE).strip()
     if not sentence:
-        return jsonify({"answer": "Please include a sentence.\nExample: use skill speak-cantonese-save 各個國家有各個國家嘅國歌"})
+        return jsonify({"answer": "Please include a sentence.\nExample: use skill speak-cantonese-save 各個國家都有各個國家嘅國歌"})
     answer = speak_cantonese_save(sentence, save_dir=BASE_DIR)
     return jsonify({"answer": answer, "skill": "speak-cantonese-save"})
 

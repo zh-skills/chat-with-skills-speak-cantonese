@@ -38,11 +38,11 @@ const SKILLS_CATALOG = [
     from: ['text'],
     to: ['text'],
     desc: 'Speak a Cantonese sentence aloud using edge-tts.<br><span style="color:#8e8e93;font-size:12px;">用 edge-tts 朗读粤语句子。</span>',
-    natural: 'use skill speak-cantonese 各個國家有各個國家嘅國歌',
+    natural: 'use skill speak-cantonese 各個國家都有各個國家嘅國歌',
     examples: [
-      'use skill speak-cantonese 各個國家有各個國家嘅國歌',
+      'use skill speak-cantonese 各個國家都有各個國家嘅國歌',
       'use skill speak-cantonese 一蚊一隻雞，一蚊一隻龜',
-      '用技能講廣東話 各個國家有各個國家嘅國歌',
+      '用技能講廣東話 各個國家都有各個國家嘅國歌',
     ],
   },
   {
@@ -52,9 +52,9 @@ const SKILLS_CATALOG = [
     from: ['text'],
     to: ['text'],
     desc: 'Convert a Cantonese sentence to speech and save as mp3. No playback.<br><span style="color:#8e8e93;font-size:12px;">将粤语句子转为语音并保存为 mp3，不播放。</span>',
-    natural: 'use skill speak-cantonese-save 各個國家有各個國家嘅國歌',
+    natural: 'use skill speak-cantonese-save 各個國家都有各個國家嘅國歌',
     examples: [
-      'use skill speak-cantonese-save 各個國家有各個國家嘅國歌',
+      'use skill speak-cantonese-save 各個國家都有各個國家嘅國歌',
       'use skill speak-cantonese-save 一蚊一隻雞，一蚊一隻龜',
     ],
   },

@@ -19,7 +19,7 @@ description: 将粤语句子转换为语音并保存为当前目录下的 mp3 �
 
 ## 触发示例
 
-- `use skill speak-cantonese-save 各個國家有各個國家嘅國歌`
+- `use skill speak-cantonese-save 各個國家都有各個國家嘅國歌`
 - `use skill speak-cantonese-save 一蚊一隻雞，一蚊一隻龜`
 
 ## 输出格式

@@ -20,7 +20,7 @@ description: 将粤语句子转换为语音并朗读。仅当用户明确输入 
 
 ## 触发示例
 
-- `use skill speak-cantonese 各個國家有各個國家嘅國歌`
+- `use skill speak-cantonese 各個國家都有各個國家嘅國歌`
 - `use skill speak-cantonese 一蚊一隻雞，一蚊一隻龜`
 
 ## 输出格式

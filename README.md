@@ -1,6 +1,6 @@
 # Chat with speak-cantonese skill
 
-A local AI chat app with built-in Cantonese text-to-speech skills. Runs entirely on your computer — no cloud API needed for TTS.
+A local AI chat app with built-in Cantonese text-to-speech (TTS) skills. Runs entirely on your computer — no cloud API needed for TTS.
 
 > 本地 AI 聊天应用，内置粤语语音技能，无需云端 API。
 
@@ -123,7 +123,7 @@ models/                     — GGUF model files (downloaded on first use)
 ```
 What is artificial intelligence?
 什么是人工智能？
-use skill speak-cantonese 各個國家有各個國家嘅國歌
+use skill speak-cantonese 各個國家都有各個國家嘅國歌
 use skill speak-cantonese-save 一蚊一隻雞，一蚊一隻龜
 use skill speak-cantonese-file cantonese-challenge-1.txt
 use skill speak-cantonese-file speech-Cantonese.txt

@@ -17,7 +17,7 @@ Convert a Cantonese sentence to speech using edge-tts and save as an mp3 file. N
 
 ## Trigger Examples
 
-- `use skill speak-cantonese-save 各個國家有各個國家嘅國歌`
+- `use skill speak-cantonese-save 各個國家都有各個國家嘅國歌`
 - `use skill speak-cantonese-save 一蚊一隻雞，一蚊一隻龜`
 
 ## Output Format
