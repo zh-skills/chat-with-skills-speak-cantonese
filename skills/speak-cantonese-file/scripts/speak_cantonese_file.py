@@ -56,21 +56,20 @@ def play_blocking(filepath: str):
         if system == 'Darwin':
             subprocess.run(['afplay', filepath], timeout=60)
         elif system == 'Windows':
-            # Use PowerShell MediaPlayer to play and wait for completion
-            ps_script = (
-                f"$player = New-Object System.Windows.Media.MediaPlayer;"
-                f"$player.Open([System.Uri]::new('{os.path.abspath(filepath).replace(chr(92), '/')}'));"
-                f"$player.Play();"
-                f"Start-Sleep -Milliseconds 500;"
-                f"while ($player.NaturalDuration.HasTimeSpan -eq $false) {{ Start-Sleep -Milliseconds 100 }};"
-                f"$duration = $player.NaturalDuration.TimeSpan.TotalSeconds;"
-                f"Start-Sleep -Seconds ($duration + 0.5);"
-                f"$player.Close();"
-            )
-            subprocess.run(
-                ['powershell', '-Command', ps_script],
-                timeout=120, capture_output=True
-            )
+            # Use playsound for blocking playback on Windows
+            try:
+                from playsound import playsound
+                playsound(filepath)
+            except ImportError:
+                # Fallback: install playsound then retry
+                subprocess.run([sys.executable, '-m', 'pip', 'install', 'playsound==1.2.2'],
+                               capture_output=True)
+                try:
+                    from playsound import playsound
+                    playsound(filepath)
+                except Exception:
+                    # Last resort: use start /wait (opens media player)
+                    subprocess.run(['start', '/wait', '', filepath], shell=True, timeout=60)
         else:
             subprocess.run(['aplay', filepath], timeout=60)
     except Exception:

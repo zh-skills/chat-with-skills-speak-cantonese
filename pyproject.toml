@@ -10,4 +10,5 @@ dependencies = [
     "waitress",
     "llama-cpp-python",
     "edge-tts",
+    "playsound==1.2.2",
 ]
