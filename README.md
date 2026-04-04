@@ -162,6 +162,14 @@ use skill speak-cantonese-file speech-Cantonese.txt
 
 ---
 
+## Known Issues — Windows
+
+- **Run PowerShell as Administrator** — right-click PowerShell and select "Run as administrator" before running `uv run server.py`. Some Windows security policies block Python DLLs when run as a normal user.
+- **speak-cantonese-file** — audio playback between lines requires `playsound` (included in dependencies). If playback doesn't work, the mp3 files are still saved and can be played manually.
+- **Application Control policy** — on managed/corporate Windows computers, Python DLLs may be blocked by AppLocker or Windows Defender Application Control. Contact your IT administrator to whitelist Python.
+
+---
+
 ## License
 
 MIT
