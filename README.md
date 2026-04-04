@@ -26,7 +26,7 @@ cd chat-with-skills-speak-cantonese
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-python cantonese01_server.py
+python server.py
 ```
 
 **Windows:**
@@ -36,7 +36,7 @@ cd chat-with-skills-speak-cantonese
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
-python cantonese01_server.py
+python server.py
 ```
 
 The browser opens automatically at `http://localhost:8114/cantonese01_index.html`.
