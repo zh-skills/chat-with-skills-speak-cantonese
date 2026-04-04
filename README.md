@@ -82,9 +82,11 @@ On first chat, the Qwen2.5-0.5B model (~400MB) downloads automatically to `model
 
 ## Requirements
 
-- Python 3.10+
+- Python 3.11 (pinned via `.python-version` — `uv` downloads it automatically if needed)
 - macOS or Windows (TTS playback uses `afplay` on macOS, `start` on Windows)
 - Internet connection for first model download and edge-tts synthesis
+
+> **Why Python 3.11?** Key packages like `llama-cpp-python` and `faster-whisper` have the most reliable pre-built wheels for 3.11. Newer versions (3.12+) may require slow C++ compilation.
 
 ### Install dependencies
 
