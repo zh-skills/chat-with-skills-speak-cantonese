@@ -109,10 +109,6 @@ cd chat-with-skills-folder\chat-with-skills-speak-cantonese
 uv run server.py
 ```
 
-The browser opens automatically at `http://localhost:8114/cantonese01_index.html`.
-
-On first chat, the Qwen2.5-0.5B model (~400MB) downloads automatically to `models/`.
-
 ---
 
 ## Requirements
