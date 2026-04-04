@@ -19,25 +19,22 @@ A local AI chat app with built-in Cantonese text-to-speech skills. Runs entirely
 
 ## Quick Start
 
-**macOS / Linux:**
+**Step 1 — Install uv (one-time, choose one):**
 ```bash
-git clone https://github.com/zh-skills/chat-with-skills-speak-cantonese
-cd chat-with-skills-speak-cantonese
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-python server.py
+pip install uv                                                    # if pip works
+pipx install uv                                                   # if pip is blocked (macOS Homebrew)
+curl -LsSf https://astral.sh/uv/install.sh | sh                  # macOS / Linux (no pip needed)
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"       # Windows (no pip needed)
 ```
 
-**Windows:**
+**Step 2 — Clone and run:**
 ```bash
 git clone https://github.com/zh-skills/chat-with-skills-speak-cantonese
 cd chat-with-skills-speak-cantonese
-python -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
-python server.py
+uv run server.py
 ```
+
+`uv run` automatically creates a virtual environment, installs all dependencies, and starts the server.
 
 The browser opens automatically at `http://localhost:8114/cantonese01_index.html`.
 
