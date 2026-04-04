@@ -49,6 +49,10 @@ macOS / Linux (no pip needed):
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
+After installing, run this to activate uv in your current terminal:
+```bash
+source $HOME/.local/bin/env
+```
 
 Windows (no pip needed):
 ```bash
